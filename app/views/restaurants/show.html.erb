@@ -1,0 +1,13 @@
+<h1><%= @restaurant.name %></h1>
+<p>Find us at: <%= @restaurant.address %></p>
+<p>Contact us: <%= @restaurant.phone_number %></p>
+<p>We serve: <%= @restaurant.category %></p>
+<p><% @restaurant.reviews.each do |variable| %>
+  <p>Rating: <%= variable.rating %></p>
+  <p>Comment: <%= variable.content %></p>
+<% end %>
+</p>
+<br>
+
+<p><%= link_to 'Add a new review', '/restaurants/:id/reviews/new' %></p>
+<p><%= link_to 'Back to all restaurants', '/restaurants' %></p>
